@@ -37,7 +37,10 @@ export default function SignupPage() {
       setError("Your passwords do not match.");
       return;
     }
-
+ if (accountType === "seller" && !storeName.trim()) {
+  setError("Please enter your store name.");
+  return;
+ }
     setLoading(true);
 
     const { data, error } = await supabase.auth.signUp({
