@@ -174,6 +174,19 @@ export default function SignupPage() {
               <option value="customer">Customer - I want to shop</option>
               <option value="seller">Seller - I want to sell products</option>
             </select>
+            {accountType === "seller" && (
+  <>
+    <label style={labelStyle}>Store Name</label>
+    <input
+      type="text"
+      required
+      value={storeName}
+      onChange={(e) => setStoreName(e.target.value)}
+      placeholder="Enter your store name"
+      style={inputStyle}
+    />
+  </>
+)}
 
             <label style={labelStyle}>Password</label>
             <input
