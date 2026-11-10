@@ -1,4 +1,4 @@
-"use client";
+B"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -49,8 +49,10 @@ export default function SignupPage() {
       options: {
         emailRedirectTo: `${window.location.origin}/auth/callback`,
         data: {
-          full_name: fullName,
-          account_type: accountType,
+  full_name: fullName,
+  account_type: accountType,
+  store_name: accountType === "seller" ? storeName.trim() : null,
+},
         },
       },
     });
