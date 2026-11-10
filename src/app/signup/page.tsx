@@ -44,18 +44,17 @@ export default function SignupPage() {
     setLoading(true);
 
     const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${window.location.origin}/auth/callback`,
-        data: {
-  full_name: fullName,
-  account_type: accountType,
-  store_name: accountType === "seller" ? storeName.trim() : null,
-},
-        },
-      },
-    });
+  email,
+  password,
+  options: {
+    emailRedirectTo: `${window.location.origin}/auth/callback`,
+    data: {
+      full_name: fullName,
+      account_type: accountType,
+      store_name: accountType === "seller" ? storeName.trim() : null,
+    },
+  },
+});
 
     setLoading(false);
 
